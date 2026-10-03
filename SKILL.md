@@ -30,14 +30,15 @@ description: 把一个主题做成「代码实时渲染的 3D 纪录短片」—
 所有命令都在工程目录里运行。`film.py` 是唯一的入口。
 
 ```bash
-SK=~/.claude/skills/code-doc-film
+# SK = 这份 SKILL.md 所在的目录。装在哪就是哪，例如：
+SK=~/.claude/skills/code-doc-film        # 或 ~/.agents/skills/code-doc-film
 python3 $SK/scripts/new_project.py videos/<slug>      # 新建工程（HyperFrames 初始化 + 引擎 + three.js）
 cd videos/<slug>
 ```
 
 | 步骤 | 做什么 | 命令 / 文件 |
 |---|---|---|
-| 1 查证 | 列出每个节点的事实和出处，写进 `film.json` 的 `facts` | WebSearch；见 `references/rules.md` |
+| 1 查证 | 列出每个节点的事实和出处，写进 `film.json` 的 `facts` | 上网搜索；见 `references/rules.md` |
 | 2 写稿 | 每帧一段旁白，拆成「句」（cue）数组；定镜头切点 | `film.json`；`python3 scripts/film.py cues` |
 | 3 地图 | 有路线的题目：填 `geo`（范围、地名、路线），生成地形 | `film.py geo`（先看要下载什么，问过用户再加 `--download`） |
 | 4 试排 | 不花钱先估时长、排镜头 | `film.py audio --dry` |
@@ -93,7 +94,7 @@ export default {
 python3 scripts/film.py qa --frames
 ```
 
-它做三件事：核对旁白里的每个数字在 `facts` 里有出处、每个镜头都有实现；无头渲染每个镜头的开头/中间/结尾三帧，报出全黑、过曝、一片平、机位被修正的帧；生成带镜头名和时间的总览图 `build/qa/contact-N.jpg`。**总览图要自己看一遍**（用 Read 打开）——脚本能发现「黑」和「白」，发现不了「人太小」「构图空」「字幕压住了主体」。
+它做三件事：核对旁白里的每个数字在 `facts` 里有出处、每个镜头都有实现；无头渲染每个镜头的开头/中间/结尾三帧，报出全黑、过曝、一片平、机位被修正的帧；生成带镜头名和时间的总览图 `build/qa/contact-N.jpg`。**总览图要自己看一遍**（把图片打开来看）——脚本能发现「黑」和「白」，发现不了「人太小」「构图空」「字幕压住了主体」。
 
 调试单个镜头用浏览器预览更快，做法和坑（缓存、视口、总览图工具）见 `references/qa.md`。
 
@@ -114,5 +115,5 @@ python3 scripts/film.py qa --frames
 升级已有工程的引擎（不动 `film.json`、`scenes/`、`assets/`、`audio/`）：
 
 ```bash
-python3 ~/.claude/skills/code-doc-film/scripts/new_project.py videos/<slug> --sync
+python3 $SK/scripts/new_project.py videos/<slug> --sync
 ```

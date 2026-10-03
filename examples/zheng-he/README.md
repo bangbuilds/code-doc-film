@@ -3,7 +3,8 @@
 2 分 05 秒，12 段（封面 + 开场 + 8 站 + 过洋牵星 + 结尾），用户只给了一句题目，确认过一次稿子。
 
 ```bash
-python3 ~/.claude/skills/code-doc-film/scripts/new_project.py videos/zheng-he-copy --example zheng-he
+SK=~/.claude/skills/code-doc-film        # skill 装在哪就写哪
+python3 $SK/scripts/new_project.py videos/zheng-he-copy --example zheng-he
 cd videos/zheng-he-copy
 python3 scripts/film.py geo            # 列出要下载的地形瓦片（189 张，约 14 MB）；同意后加 --download
 python3 scripts/film.py audio --dry    # 不花钱试排

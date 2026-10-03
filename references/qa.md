@@ -25,14 +25,14 @@ python3 scripts/film.py qa --frames --only ceylon africa    # 只查这几帧
 
 | 信息 | 常见原因 |
 |---|---|
-| `SCENE ERROR — the code threw`（算错误，不是警告） | 这个镜头的代码运行时出错。用 Read 打开提示的那张图：整帧是深红底，上面写着报错和 `scenes/xxx.js:行:列`。只有出错的镜头会被标出来；如果每一个镜头都报，多半是场景文件有语法错误或 import 写错了名字 |
+| `SCENE ERROR — the code threw`（算错误，不是警告） | 这个镜头的代码运行时出错。把提示的那张图打开来看：整帧是深红底，上面写着报错和 `scenes/xxx.js:行:列`。只有出错的镜头会被标出来；如果每一个镜头都报，多半是场景文件有语法错误或 import 写错了名字 |
 | `every sampled frame is one flat colour`（算错误） | 整页脚本都没跑起来，连报错面板都画不出。开预览（`tools/serve.py`）看浏览器控制台 |
 | `engine warning on this frame` | 机位被引擎修正过。打开那张图，右上角红框里写着原因：`camera … is under the ground` = 机位写到了地面以下；`terrain blocks the view` = 机位和目标之间有山。回去改镜头（用 `W.on(x, z, 离地)`，或换角度） |
 | `nearly black` | 光太暗、灯没开、机位埋在东西里、镜头对着背光面。夜景本身偏暗是正常的，阈值已经放宽；真报出来就是黑得看不见 |
 | `blown out` | 点光强度太大、雾太浓太亮、曝光太高 |
 | `flat, almost no detail` | 浓雾里什么都没有，或镜头对着一面墙、一片天 |
 
-然后**用 Read 打开总览图** `build/qa/contact-1.jpg`、`-2.jpg`…… 每格左上角是「帧/镜头 时间」。脚本查不出来、要靠眼睛的问题：
+然后**把总览图打开来看** `build/qa/contact-1.jpg`、`-2.jpg`…… 每格左上角是「帧/镜头 时间」。脚本查不出来、要靠眼睛的问题：
 
 - 主体太小，看不出是什么（人在 100 米外就是点）。
 - 画面一半是空的水面、空的天、空的坡。
@@ -45,14 +45,14 @@ python3 scripts/film.py qa --frames --only ceylon africa    # 只查这几帧
 
 ## 在浏览器里调单个镜头
 
-改一个镜头就全片抽帧太慢。日常调试用预览：
+改一个镜头就全片抽帧太慢。日常调试用预览。这一节需要一个你能操作的浏览器（能打开本地网页、在页面里执行 JS、截图）；没有的话跳过这一节，用 `film.py qa --frames --only <帧id>` 代替，慢一点但结果一样。
 
-1. 在 `.claude/launch.json` 里加一项（端口随意）：
+1. 起一个本地服务：`python3 tools/serve.py 8765 .`（在工程目录里）。**一定用 `tools/serve.py`**，不要用 `python3 -m http.server`：后者不发禁用缓存的头，浏览器会一直用旧的 JS 模块，你改了代码页面却不变。
+   在 Claude Code 桌面版里，把它登记进 `.claude/launch.json` 再用预览面板打开：
    ```json
    { "name": "film-preview", "runtimeExecutable": "python3", "runtimeArgs": ["videos/<slug>/tools/serve.py", "8765", "videos/<slug>"], "port": 8765 }
    ```
-   **一定用 `tools/serve.py`**，不要用 `python3 -m http.server`：后者不发禁用缓存的头，浏览器会一直用旧的 JS 模块，你改了代码页面却不变。
-2. `preview_start`，把视口设成 1920×1080（竖屏 1080×1920），打开 `http://localhost:8765/index.html`。视口设置每轮对话都会被清掉，每次截图前重设。
+2. 把视口设成 1920×1080（竖屏 1080×1920），打开 `http://localhost:8765/index.html`。有些环境每轮对话会重置视口，截图前确认一下。
 3. 在页面里执行：
    ```js
    await window.__hf.buildReady['film'];

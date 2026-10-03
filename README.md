@@ -1,6 +1,6 @@
 # code-doc-film
 
-一个 [Claude Code](https://claude.com/claude-code) skill：说一句题目，做出一条 1–3 分钟的 **3D 纪录短片**。
+一个 Agent Skill（在 [Claude Code](https://claude.com/claude-code) 上做的、测的）：说一句题目，做出一条 1–3 分钟的 **3D 纪录短片**。
 
 画面全部由代码实时渲染（three.js），地图用真实地形数据，配乐和环境声用 numpy 合成。**不用一张图片、一段视频素材、一首现成的曲子。**
 
@@ -22,7 +22,7 @@
 
 需要：
 
-- Claude Code
+- Claude Code（或其他能加载 `SKILL.md` 格式 skill 的编程助手，见下）
 - Node.js 20+（渲染用 [HyperFrames](https://hyperframes.heygen.com)，通过 `npx` 调用）
 - Python 3.10+，装好 `numpy` 和 `Pillow`
 - `ffmpeg`
@@ -34,10 +34,19 @@ pip install numpy pillow
 
 然后在 Claude Code 里直接说题目就行，比如「做一条丝绸之路的 3D 视频」。
 
-## 不经过 Claude，先跑一遍范例
+**Codex 等其他工具**：skill 是通用的 `SKILL.md` 格式，脚本只依赖 Python、Node 和 ffmpeg，装到那个工具读取 skill 的目录即可，例如：
 
 ```bash
-python3 ~/.claude/skills/code-doc-film/scripts/new_project.py zheng-he-demo --example zheng-he
+git clone https://github.com/bangbuilds/code-doc-film ~/.agents/skills/code-doc-film
+```
+
+这条路**没有实测过**——能加载是一回事，三维场景写得好不好、会不会自己看图挑毛病，取决于模型。试过的话欢迎提 issue 告诉我结果。
+
+## 不经过 AI，先手动跑一遍范例
+
+```bash
+SK=~/.claude/skills/code-doc-film        # 你克隆到的位置
+python3 $SK/scripts/new_project.py zheng-he-demo --example zheng-he
 cd zheng-he-demo
 python3 scripts/film.py geo              # 列出要下载的地形：189 张瓦片，约 14 MB
 python3 scripts/film.py geo --download   # 同意后下载
@@ -59,7 +68,7 @@ python3 scripts/film.py render           # 渲染 + 打包，约 6 分钟
 
 这是一个**早期版本**，如实说明：
 
-- 到目前只做过两条片子，都在同一台机器上（macOS，Apple Silicon）。**Linux 和 Windows 没有测过**。
+- 到目前只做过两条片子，都是 Claude Code 做的，都在同一台机器上（macOS，Apple Silicon）。**Linux、Windows、Codex 等其他工具都没有测过**。
 - 配音：系统语音 `say`、任意命令行、自定义插件三条都实测过；`edge-tts` 这一条**没有**实测过。
 - 发布前做过一次干净安装测试：只用仓库里的文件新建工程，用系统语音把范例完整渲了出来（2 分 17 秒，渲染 5.8 分钟，检查 0 错误）。
 - 小人是低模剪影，近看是方块；它做不了人脸、表演、人物特写。
@@ -92,4 +101,4 @@ MIT，见 [LICENSE](LICENSE)。
 
 ---
 
-**English.** A Claude Code skill that turns one sentence ("make a 3D film about Zheng He's voyages") into a 1–3 minute narrated documentary short. Every frame is rendered from code with three.js over real terrain data; the score and ambience are synthesized with numpy; no images, footage or stock music. Docs and prompts are in Chinese. Early release: two films made, tested on macOS only.
+**English.** An Agent Skill (built and tested with Claude Code) that turns one sentence ("make a 3D film about Zheng He's voyages") into a 1–3 minute narrated documentary short. Every frame is rendered from code with three.js over real terrain data; the score and ambience are synthesized with numpy; no images, footage or stock music. Docs and prompts are in Chinese. Early release: two films made, tested on macOS only.
