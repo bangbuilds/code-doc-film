@@ -1,0 +1,30 @@
+{
+  "meta": {
+    "slug": "example",
+    "title": "渡口",
+    "aspect": "16:9",
+    "platform": "x",
+    "voice": { "provider": "auto", "speed": 1.0, "tempo": 1.08, "lead": 0.4, "tail": 0.75, "gap": 0.28 },
+    "progress": { "label": "渡口", "total": 2 },
+    "cover": { "title": "渡口", "sub": "示例工程", "note": "换成你的题目", "duration": 1.2, "type": "scene", "scene": "example", "shot": "dawn" }
+  },
+  "facts": [
+    { "text": "示例：浮桥用了 14 只船", "match": ["14"], "source": "示例数据，无出处——真实项目里每个数字都要有来源链接" }
+  ],
+  "frames": [
+    {
+      "id": "dawn", "scene": "example", "station": 1, "stamp": { "title": "清晨渡河", "date": "示例 · 清晨", "place": "某条河" },
+      "narration": ["天刚亮，河面上起了雾。", "14只船连成一座浮桥，队伍开始过河。"],
+      "shots": [
+        { "id": "dawn", "until": "cue:1", "music": "calm", "ambience": ["river"] },
+        { "id": "crossing", "music": "march", "ambience": ["river", "march"] }
+      ],
+      "callouts": [{ "cue": 1, "num": "14", "unit": "只船 · 一座浮桥" }]
+    },
+    {
+      "id": "night", "scene": "example", "station": 2, "stamp": { "title": "夜里的火把", "date": "示例 · 入夜", "place": "某条河" },
+      "narration": ["到了夜里，火把连成一条线。"],
+      "shots": [{ "id": "torches", "out": { "color": "black", "dur": 0.8 }, "music": "somber", "ambience": ["river", "night"] }]
+    }
+  ]
+}

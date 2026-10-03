@@ -1,0 +1,248 @@
+{
+  "meta": {
+    "slug": "zheng-he",
+    "title": "郑和下西洋",
+    "aspect": "16:9",
+    "platform": "x",
+    "voice": { "provider": "auto", "speed": 1.0, "tempo": 1.08, "lead": 0.4, "tail": 0.7, "gap": 0.28 },
+    "progress": { "label": "下西洋", "total": 8 },
+    "stationFormat": "第 {n} 站 / 共 {total} 站",
+    "style": { "route": "#f0b84a", "route2": "#f0b84a", "dot": "#ffe2a0", "sea": { "deep": "#0f2c3b" }, "ramp": "warm", "edgeFade": 0.07 },
+    "musicSeed": 1405,
+    "cover": {
+      "title": "郑和下西洋", "sub": "1405 — 1433 · 七下西洋", "note": "8 站 · 全片代码实时渲染", "duration": 1.2,
+      "map": { "fit": ["南京", "麻林", "忽鲁谟斯", "爪哇"], "margin": 1.0, "pitch": 62, "yaw": 0,
+               "draw": { "from": "total", "to": "total" },
+               "extra": [{ "route": "west", "t": [0, 0.01] }, { "route": "africa", "t": [0, 0.01] }],
+               "dots": ["南京", "古里", "忽鲁谟斯", "麻林"], "post": { "bloom": 0.9 } }
+    }
+  },
+
+  "geo": {
+    "zoom": 6,
+    "bbox": [28, -15, 128, 38],
+    "riverRank": 4,
+    "places": {
+      "南京": [118.74, 32.07], "刘家港": [121.26, 31.51], "长乐": [119.60, 25.97], "占城": [109.25, 13.77], "爪哇": [112.74, -7.20],
+      "旧港": [104.76, -2.99], "满剌加": [102.25, 2.19], "苏门答剌": [97.15, 5.20], "锡兰山": [80.22, 6.03], "古里": [75.78, 11.25],
+      "溜山": [73.50, 4.18], "忽鲁谟斯": [56.46, 27.06], "木骨都束": [45.34, 2.04], "麻林": [40.12, -3.22]
+    },
+    "routes": {
+      "main": ["南京", [119.6, 32.25], [120.6, 31.95], "刘家港", [122.4, 31.2], [122.9, 29.6], [121.6, 27.4], [120.2, 26.1], "长乐",
+               [119.9, 25.2], [118.6, 23.4], [115.6, 21.3], [112.2, 18.6], [110.6, 16.2], [109.7, 14.0], "占城", [109.9, 11.4], [109.3, 7.2], [108.2, 2.2], [108.2, -2.4],
+               [110.3, -5.6], [112.6, -6.7], "爪哇", [112.3, -6.5], [109.4, -6.1], [107.0, -5.0], [106.2, -3.3], [105.3, -2.3], "旧港",
+               [105.4, -2.1], [105.1, -0.6], [104.7, 0.7], [104.2, 1.15], [103.5, 1.1], [102.6, 1.75], "满剌加", [101.0, 2.9], [99.6, 4.2], [98.2, 5.2], "苏门答剌",
+               [96.3, 5.75], [95.0, 6.0], [92.0, 6.3], [88.0, 6.2], [84.0, 5.8], [81.4, 5.75], "锡兰山", [79.4, 6.2], [77.3, 7.4], [76.0, 8.8], [75.5, 10.3], "古里"],
+      "west": ["古里", [74.0, 13.2], [70.8, 17.0], [66.6, 20.4], [62.6, 23.2], [59.6, 24.1], [57.7, 24.9], [56.8, 26.3], "忽鲁谟斯"],
+      "africa": ["锡兰山", [79.3, 5.4], [76.5, 4.6], "溜山", [68.0, 3.6], [60.0, 3.0], [52.0, 2.4], [47.0, 1.8], "木骨都束", [44.6, 1.2], [43.0, -0.6], [41.4, -2.2], "麻林"]
+    }
+  },
+
+  "facts": [
+    { "text": "哥伦布首航：1492年8月3日出发，3艘船（圣玛丽亚号、平塔号、尼尼亚号），1492年10月12日到达美洲", "match": ["1492", "3"],
+      "source": "https://zh.wikipedia.org/zh-hans/克里斯托弗·哥伦布" },
+    { "text": "郑和首次下西洋 1405 年，比哥伦布 1492 年首航早 87 年（1492 − 1405 = 87）", "match": ["87", "1405"],
+      "source": "年份相减；1405 年见 https://www.fujian.gov.cn/zwgk/ztzl/sxzygwzxsgzx/sdjj/hyjj/202407/t20240712_6482586.htm" },
+    { "text": "永乐三年六月（1405年7月）郑和奉成祖之命通使西洋；《明史·郑和传》：将士卒二万七千八百余人，造大舶……者六十二", "match": ["7", "62", "27,800"],
+      "source": "https://zh.wikisource.org/zh-hans/明史/卷304" },
+    { "text": "船队自苏州刘家河（太仓刘家港）泛海，至福建长乐太平港停泊候风，冬季乘东北季风开洋", "match": [],
+      "source": "https://www.fujian.gov.cn/zwgk/ztzl/sxzygwzxsgzx/sdjj/hyjj/202407/t20240712_6482586.htm" },
+    { "text": "航海用罗盘（针路）与过洋牵星术：用牵星板测星辰高度定纬度；《郑和航海图》附过洋牵星图", "match": [],
+      "source": "https://zh.wikipedia.org/zh-hans/过洋牵星术 ；https://www.ihns.ac.cn/kxcb_/kxjd/202212/t20221206_6567192.html" },
+    { "text": "首次下西洋经占城、爪哇、旧港等地；在旧港擒陈祖义（《明史·郑和传》）", "match": [],
+      "source": "https://zh.wikisource.org/zh-hans/明史/卷304" },
+    { "text": "满剌加（今马六甲）：宝船到彼，立排栅、盖造库藏仓廒，等候风信回洋（马欢《瀛涯胜览·满剌加国》）", "match": [],
+      "source": "https://zh.wikisource.org/zh-hans/瀛涯勝覽 （原文未逐字核对）" },
+    { "text": "《布施锡兰山佛寺碑》：1409年2月15日立，中文、泰米尔文、波斯文三种文字；现藏斯里兰卡国家博物馆，2025年列入《世界记忆名录》", "match": ["1409", "3"],
+      "source": "https://lk.china-embassy.gov.cn/chn/dssghd/202504/t20250424_11603614.htm" },
+    { "text": "古里（今印度卡利卡特）为首次下西洋所到最远处；《瀛涯胜览·古里国》记有以丝绸等换胡椒、宝石的交易", "match": [],
+      "source": "https://zh.wikipedia.org/zh-hans/郑和下西洋 ；交易细节见《瀛涯胜览·古里国》（原文未逐字核对）" },
+    { "text": "第四次下西洋 1413年11月出发、1415年8月回国，到达忽鲁谟斯", "match": ["1413"],
+      "source": "https://zh.wikipedia.org/zh-hans/郑和下西洋" },
+    { "text": "忽鲁谟斯：“各处番船并旱番客商都到此地赶集买卖”（马欢《瀛涯胜览·忽鲁谟斯国》）", "match": [],
+      "source": "https://zh.wikisource.org/zh-hans/瀛涯勝覽 （原文未逐字核对）" },
+    { "text": "船队到达非洲东岸木骨都束（今摩加迪沙）、麻林（今肯尼亚马林迪）；永乐十三年（1415年）麻林国遣使至南京献“麒麟”（长颈鹿）", "match": ["1415"],
+      "source": "https://www.icc.org.cn/specialties/civilizationaldialogue/197.html ；https://xbzs.ecnu.edu.cn/CN/html/2018-2-1.htm" },
+    { "text": "第七次下西洋：1431年初自南京出发，宣德六年在长乐立《天妃灵应之记》碑，1433年7月船队回到南京", "match": ["1431", "1433"],
+      "source": "https://www.chinanews.com.cn/cul/news/2009/12-14/2016885.shtml ；https://zh.wikipedia.org/zh-hans/郑和下西洋" },
+    { "text": "1405—1433 共28年、7次远航，《明史》称所历“凡三十馀国”", "match": ["28", "7", "30"],
+      "source": "https://zh.wikisource.org/zh-hans/明史/卷304" }
+  ],
+
+  "frames": [
+    {
+      "id": "hook", "scene": "f01_hook", "stamp": { "no": "1405 — 1433", "title": "郑和下西洋" },
+      "narration": ["1492年，哥伦布带着3艘船驶向美洲。", "而在87年前，", "一支更大的船队，已经从中国出发。"],
+      "shots": [
+        { "id": "empty", "until": "cue:1", "in": { "color": "black", "dur": 0.5 }, "music": { "mood": "swell", "level": 0.6 }, "ambience": ["sea"] },
+        { "id": "fleet", "in": "cut", "music": { "mood": "reveal", "chord": "Dm", "level": 0.9, "horn": ["D4", "A4"] }, "ambience": ["sea", "wind"] }
+      ],
+      "callouts": [
+        { "cue": 0, "delay": 0.5, "num": "3", "unit": "艘船 · 1492 年 哥伦布" },
+        { "cue": 1, "until": "end-0.3", "num": "87", "unit": "年前 · 1405 年", "red": true }
+      ]
+    },
+    {
+      "id": "depart", "scene": "f02_depart", "station": 1,
+      "stamp": { "title": "奉命出使", "date": "1405 · 7", "place": "南京 · 龙江" },
+      "narration": ["1405年7月，郑和奉明成祖之命，出使西洋。", "《明史》记载：大船62艘，", "将士27,800余人。", "船队从太仓刘家港入海。"],
+      "shots": [
+        { "id": "yard", "until": "cue:1", "in": { "color": "mist", "dur": 0.5 }, "music": { "mood": "calm", "chord": "F" }, "ambience": ["river", "crowd"] },
+        { "id": "river", "until": "cue:3", "in": "cut", "music": { "mood": "march", "chord": "Bb", "level": 0.85 }, "ambience": ["river", "wind"] },
+        { "id": "map", "stamp": { "place": "江苏 · 太仓刘家港" }, "music": { "mood": "swell", "chord": "F" },
+          "map": { "from": { "place": "刘家港", "dx": -40, "dz": 10 }, "to": { "place": "刘家港", "dx": 20, "dz": 30 }, "dist": [330, 420], "pitch": [58, 62], "yaw": [-6, 2],
+                   "draw": { "from": "start", "to": "刘家港+60", "t": [0.2, 2.6] }, "dots": ["南京", "刘家港"],
+                   "pins": [{ "place": "南京", "a": 0.2 }, { "place": "刘家港", "a": 1.2 }, { "ll": [117.9, 30.9], "text": "长江", "kind": "river", "a": 0.4 }] } }
+      ],
+      "callouts": [
+        { "cue": 1, "num": "62", "unit": "艘大船 ·《明史》" },
+        { "cue": 2, "until": "cue:3", "num": "27,800", "unit": "余人" }
+      ]
+    },
+    {
+      "id": "changle", "scene": "f03_changle", "station": 2,
+      "stamp": { "title": "长乐 · 太平港", "date": "候风", "place": "福建 · 长乐" },
+      "narration": ["第一站不远：福建长乐，太平港。", "船队在这里停下来，等风。", "冬天，东北季风一起，才扬帆南下。"],
+      "shots": [
+        { "id": "map", "until": "cue:1", "music": { "mood": "swell", "chord": "F" },
+          "map": { "from": { "place": "刘家港", "dx": 0, "dz": 80 }, "to": { "place": "长乐", "dx": 20, "dz": -20 }, "dist": [560, 380], "pitch": [60, 62], "yaw": [4, -4],
+                   "draw": { "from": "刘家港+60", "to": "长乐", "t": [0.1, 2.3] }, "dots": ["刘家港", "长乐"],
+                   "pins": [{ "place": "刘家港", "a": 0.1, "b": 2.0 }, { "place": "长乐", "a": 1.4 }] } },
+        { "id": "anchor", "until": "cue:2+0.5", "in": { "color": "mist", "dur": 0.5 }, "music": { "mood": "calm", "chord": "Bb" }, "ambience": ["lake", "night"] },
+        { "id": "sail", "in": "cut", "music": { "mood": "hope", "chord": "F", "level": 0.9 }, "ambience": ["sea", "wind"] }
+      ],
+      "callouts": [
+        { "cue": 2, "delay": 0.5, "num": "东北季风", "unit": "冬季 · 顺风南下", "small": true }
+      ]
+    },
+    {
+      "id": "nav", "scene": "f04_nav", "lead": 1.0,
+      "stamp": { "title": "过洋牵星", "date": "罗盘 · 牵星板", "place": "海上" },
+      "narration": ["大海上没有路标。", "白天，看罗盘定方向；", "夜里，用牵星板量星星的高度，算出船到了哪里。"],
+      "shots": [
+        { "id": "day", "until": "cue:1", "in": { "color": "mist", "dur": 0.5 }, "music": { "mood": "calm", "chord": "Dm" }, "ambience": ["sea", "wind"] },
+        { "id": "compass", "until": "cue:2", "in": "cut", "music": { "mood": "calm", "chord": "Bb" }, "ambience": ["sea"] },
+        { "id": "stars", "in": { "color": "black", "dur": 0.5 }, "music": { "mood": "swell", "chord": "Gm", "level": 0.7 }, "ambience": ["sea", "night"] }
+      ],
+      "callouts": [
+        { "cue": 2, "delay": 1.0, "num": "牵星板", "unit": "量星星的高度 → 纬度", "small": true }
+      ]
+    },
+    {
+      "id": "malacca", "scene": "f05_malacca", "station": 3,
+      "stamp": { "title": "旧港 · 满剌加", "date": "南洋", "place": "今印尼巨港 · 马来西亚马六甲" },
+      "narration": ["经占城、爪哇，到旧港。", "海盗首领陈祖义，在这里被擒。", "再往前是满剌加，今天的马六甲。", "船队在这里围起栅栏、盖起仓库，作为中转站。"],
+      "shots": [
+        { "id": "map", "until": "cue:2", "music": { "mood": "tension", "chord": "Gm", "level": 0.75 },
+          "map": { "fit": { "from": ["长乐", "占城", "爪哇", "旧港"], "to": ["占城", "爪哇", "旧港", "满剌加"] }, "margin": 1.05, "pitch": [62, 58], "yaw": [0, -5],
+                   "draw": { "from": "长乐", "to": "旧港", "t": [0.1, "cue:1+0.4"] }, "dots": ["长乐", "占城", "爪哇", "旧港"],
+                   "pins": [{ "place": "占城", "a": 0.9 }, { "place": "爪哇", "a": 1.9 }, { "place": "旧港", "a": 2.6 }] } },
+        { "id": "map2", "until": "cue:3", "in": "cut", "music": { "mood": "swell", "chord": "Bb" },
+          "map": { "from": { "place": "旧港", "dx": 0, "dz": -60 }, "to": { "place": "满剌加", "dx": 20, "dz": 10 }, "dist": [520, 300], "pitch": [58, 60], "yaw": [-5, 6],
+                   "draw": { "from": "旧港", "to": "满剌加", "t": [0.1, 2.2] }, "dots": ["旧港", "满剌加"],
+                   "pins": [{ "place": "旧港", "a": 0.0, "b": 1.8 }, { "place": "满剌加", "a": 1.5 }, { "ll": [100.3, 3.9], "text": "马六甲海峡", "kind": "river", "a": 1.2 }] } },
+        { "id": "depot", "in": { "color": "mist", "dur": 0.5 }, "music": { "mood": "calm", "chord": "F" }, "ambience": ["sea", "crowd"] }
+      ],
+      "callouts": [
+        { "cue": 3, "delay": 0.6, "num": "官厂", "unit": "栅栏 · 仓库 · 中转站", "small": true }
+      ]
+    },
+    {
+      "id": "ceylon", "scene": "f06_ceylon", "station": 4, "tail": 1.7,
+      "stamp": { "title": "锡兰山", "date": "1409 · 2 · 15", "place": "今斯里兰卡" },
+      "narration": ["1409年，锡兰山，今天的斯里兰卡。", "郑和在这里立下一块石碑，", "碑上刻着3种文字：中文、泰米尔文、波斯文。", "这块碑，今天还在。"],
+      "shots": [
+        { "id": "map", "until": "cue:1", "music": { "mood": "swell", "chord": "Dm" },
+          "map": { "fit": { "from": ["满剌加", "苏门答剌", "锡兰山"], "to": ["苏门答剌", "锡兰山", [80, 12]] }, "margin": 1.1, "pitch": [60, 62], "yaw": [4, -3],
+                   "draw": { "from": "满剌加", "to": "锡兰山", "t": [0.1, 3.0] }, "dots": ["满剌加", "苏门答剌", "锡兰山"],
+                   "pins": [{ "place": "苏门答剌", "a": 0.8, "b": 2.6 }, { "place": "锡兰山", "a": 2.0 }, { "ll": [89.5, 9.5], "text": "孟加拉湾", "kind": "river", "a": 0.8 }] } },
+        { "id": "stele", "until": "cue:3", "in": { "color": "mist", "dur": 0.5 }, "music": { "mood": "calm", "chord": "F" }, "ambience": ["sea", "wind"] },
+        { "id": "coast", "in": "cut", "music": { "mood": "hope", "chord": "C", "level": 0.8 }, "ambience": ["sea"] }
+      ],
+      "callouts": [
+        { "cue": 2, "num": "3", "unit": "种文字 · 一块石碑" }
+      ]
+    },
+    {
+      "id": "calicut", "scene": "f07_calicut", "station": 5,
+      "stamp": { "title": "古里", "date": "西洋大国", "place": "今印度 · 卡利卡特" },
+      "narration": ["再往西北，是古里，今天印度的卡利卡特。", "第一次远航，到这里为止。", "丝绸和瓷器，在这里换成胡椒和宝石。"],
+      "shots": [
+        { "id": "map", "until": "cue:1", "music": { "mood": "swell", "chord": "F" },
+          "map": { "from": { "place": "锡兰山", "dx": 0, "dz": -40 }, "to": { "place": "古里", "dx": 30, "dz": 0 }, "dist": [460, 330], "pitch": [60, 62], "yaw": [-4, 5],
+                   "draw": { "from": "锡兰山", "to": "古里", "t": [0.1, 2.6] }, "dots": ["锡兰山", "古里"],
+                   "pins": [{ "place": "锡兰山", "a": 0.0, "b": 2.0 }, { "place": "古里", "a": 1.8 }] } },
+        { "id": "harbor", "until": "cue:2+0.5", "in": { "color": "mist", "dur": 0.5 }, "music": { "mood": "calm", "chord": "Bb" }, "ambience": ["sea", "crowd"] },
+        { "id": "trade", "in": "cut", "music": { "mood": "hope", "chord": "F", "level": 0.8 }, "ambience": ["sea", "crowd"] }
+      ],
+      "callouts": [
+        { "cue": 2, "delay": 0.3, "num": "丝绸 · 瓷器", "unit": "换 胡椒 · 宝石", "small": true }
+      ]
+    },
+    {
+      "id": "hormuz", "scene": "f08_hormuz", "station": 6,
+      "stamp": { "title": "忽鲁谟斯", "date": "1413 — 1415 · 第四次", "place": "波斯湾口 · 今伊朗" },
+      "narration": ["1413年，第四次出发，船队走得更远：", "波斯湾口的忽鲁谟斯。", "各地的商船和驼队，都到这里做买卖。"],
+      "shots": [
+        { "id": "map", "until": "cue:1+0.6", "music": { "mood": "tension", "chord": "Gm", "level": 0.7 },
+          "map": { "fit": { "from": ["古里", [66, 20], [76, 20]], "to": ["古里", "忽鲁谟斯", [70, 30]] }, "margin": 1.1, "pitch": [58, 62], "yaw": [6, -4],
+                   "draw": { "from": "total", "to": "total" }, "extra": [{ "route": "west", "t": [0.2, "cue:1+0.4"] }], "dots": ["古里", "忽鲁谟斯"],
+                   "pins": [{ "place": "古里", "a": 0.0, "b": 2.6 }, { "place": "忽鲁谟斯", "a": "cue:1" }, { "ll": [65.5, 16.5], "text": "阿拉伯海", "kind": "river", "a": 0.8 }] } },
+        { "id": "port", "in": { "color": "#c9a877", "dur": 0.5 }, "music": { "mood": "reveal", "chord": "Dm", "level": 0.8 }, "ambience": ["sea", "wind"] }
+      ],
+      "callouts": [
+        { "cue": 0, "delay": 0.2, "until": "cue:1", "num": "第四次", "unit": "1413 年出发", "small": true }
+      ]
+    },
+    {
+      "id": "africa", "scene": "f09_africa", "station": 7, "tail": 2.0,
+      "stamp": { "title": "木骨都束 · 麻林", "date": "非洲东岸", "place": "今索马里摩加迪沙 · 肯尼亚马林迪" },
+      "narration": ["船队还横渡印度洋，到了非洲东岸：木骨都束、麻林。", "1415年，麻林国的使者来到南京，", "献上一头“麒麟”——", "那是一头长颈鹿。"],
+      "shots": [
+        { "id": "map", "until": "cue:1", "music": { "mood": "swell", "chord": "Dm", "level": 0.8 },
+          "map": { "fit": { "from": ["锡兰山", "溜山", "木骨都束", [60, 14]], "to": ["溜山", "木骨都束", "麻林", [55, 12]] }, "margin": 1.1, "pitch": [60, 62], "yaw": [5, -5],
+                   "draw": { "from": "total", "to": "total" }, "extra": [{ "route": "west", "t": [0, 0.01] }, { "route": "africa", "t": [0.2, 4.2] }], "dots": ["锡兰山", "木骨都束", "麻林"],
+                   "pins": [{ "place": "木骨都束", "a": 3.0 }, { "place": "麻林", "a": 3.8 }, { "ll": [60, -2.5], "text": "印度洋", "kind": "river", "a": 0.6 }] } },
+        { "id": "shore", "until": "cue:2+0.9", "in": { "color": "#d9b27a", "dur": 0.5 }, "music": { "mood": "calm", "chord": "Bb" }, "ambience": ["sea", "wind"] },
+        { "id": "giraffe", "in": "cut", "music": { "mood": "hope", "chord": "F", "level": 0.95, "horn": ["F4", "C5"] }, "ambience": ["sea", "wind"] }
+      ],
+      "callouts": [
+        { "cue": 1, "until": "cue:2", "num": "1415", "unit": "年 · 麻林使者到南京" },
+        { "cue": 3, "delay": 0.15, "until": "end-0.3", "num": "麒麟", "unit": "= 长颈鹿", "small": true, "red": true }
+      ]
+    },
+    {
+      "id": "last", "scene": "f10_last", "station": 8, "tail": 1.4,
+      "stamp": { "title": "第七次", "date": "1431 — 1433", "place": "印度洋" },
+      "narration": ["1431年，船队第七次出海。", "这是郑和最后一次远航。", "1433年，船队回到南京。", "此后，明朝再没有派出过这样的船队。"],
+      "shots": [
+        { "id": "dusk", "until": "cue:2", "in": { "color": "black", "dur": 0.5 }, "music": { "mood": "somber", "chord": "Dm", "level": 0.8 }, "ambience": ["sea", "wind"] },
+        { "id": "home", "until": "cue:3", "in": "cut", "music": { "mood": "somber", "chord": "Am", "level": 0.75 }, "ambience": ["sea"] },
+        { "id": "empty", "in": "cut", "out": { "color": "black", "dur": 0.9 }, "music": { "mood": "somber", "chord": "Dm", "level": 0.6 }, "ambience": ["sea"] }
+      ],
+      "callouts": [
+        { "cue": 0, "until": "cue:1", "num": "第七次", "unit": "1431 年出发", "small": true },
+        { "cue": 2, "until": "cue:3", "num": "1433", "unit": "年 · 船队回到南京" }
+      ]
+    },
+    {
+      "id": "end", "stamp": false,
+      "narration": ["28年，7次远航，", "到过亚洲、非洲30多个国家和地区。", "那片海上，曾经有过这样一支船队。"],
+      "shots": [
+        { "id": "map", "in": { "color": "black", "dur": 0.6 }, "out": { "color": "black", "dur": 1.1 },
+          "map": { "fit": ["南京", "麻林", "忽鲁谟斯", "爪哇", [137, 12]], "margin": 1.0, "pitch": [60, 64], "yaw": [-3, 2],
+                   "draw": { "from": "start", "to": "total", "t": [0.2, 3.6] },
+                   "extra": [{ "route": "west", "t": [3.2, 4.4] }, { "route": "africa", "t": [3.2, 5.0] }],
+                   "dots": ["南京", "古里", "忽鲁谟斯", "麻林"],
+                   "pins": [{ "place": "南京", "a": 0.3, "b": "cue:2" }, { "place": "古里", "a": 3.4, "b": "cue:2" }, { "place": "忽鲁谟斯", "a": 4.2, "b": "cue:2" }, { "place": "麻林", "a": 4.8, "b": "cue:2" }],
+                   "post": { "bloom": 0.9 } },
+          "card": { "title": "郑和下西洋", "sub": "1405 — 1433", "a": "cue:2+0.2", "b": "end", "fin": 0.8, "fout": 1.0 } }
+      ],
+      "callouts": [
+        { "cue": 0, "until": "cue:1", "num": "28", "unit": "年 · 7 次远航" },
+        { "cue": 1, "until": "cue:2", "num": "30+", "unit": "个国家和地区" }
+      ],
+      "music": [{ "until": "cue:2", "mood": "hope", "chord": "F", "level": 0.85 }, { "until": "end", "mood": "resolve", "chord": "D" }]
+    }
+  ]
+}

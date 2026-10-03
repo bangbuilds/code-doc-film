@@ -1,0 +1,7 @@
+# kept on the author's machine only
+examples/long-march/
+local/
+
+__pycache__/
+*.pyc
+.DS_Store
