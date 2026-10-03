@@ -28,7 +28,7 @@
 - `ffmpeg`
 
 ```bash
-git clone https://github.com/chenbangfa/code-doc-film ~/.claude/skills/code-doc-film
+git clone https://github.com/bangbuilds/code-doc-film ~/.claude/skills/code-doc-film
 pip install numpy pillow
 ```
 
